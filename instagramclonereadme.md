@@ -1,8 +1,10 @@
 -- 1. 	WE ARE TASKED WITH FINDING 5 THE OLDERS USERS TO GIFT THEM A REWARD FOR THE LONGEST USERS SUBSCRIBED TO US?
 
 
-SELECT * FROM users 
+SELECT * FROM users
+
 ORDER BY created_at 
+
 LIMIT 5;
 
 
@@ -12,10 +14,15 @@ LIMIT 5;
 -- 2. 	WE ARE TRYING TO SCHEDULE AN AD CAMPAIGN, WE NEED TO FIGURE OUT WHAT DAY OF THE WEEK DO MOST USERS REGISTER?
 
 
-SELECT 	dayname(created_at) AS weekday,
-		COUNT(username) AS no_registrations 
-FROM users 
+SELECT 
+dayname(created_at) AS weekday,
+
+COUNT(username) AS no_registrations
+
+FROM users
+
 GROUP BY weekday
+
 ORDER BY no_registrations DESC;
 
 
