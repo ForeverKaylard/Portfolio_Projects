@@ -1,4 +1,4 @@
--- 1. 	WE ARE TASKED WITH FINDING 5 THE OLDERS USERS TO GIFT THEM A REWARD FOR THE LONGEST USERS SUBSCRIBED TO US?
+-- 1. 	we are tasked with finding 5 the olders users to gift them a reward for the longest users subscribed to us?
 
 
 SELECT * FROM users
