@@ -20,6 +20,10 @@ FROM users
 GROUP BY weekday
 ORDER BY no_registrations DESC;
 
+
+![query2](https://github.com/moholomokhobo/mysql/assets/113181986/f18a2b61-43f7-47f0-8d29-2b21fbe2bbe5)
+
+
 -- (WE SHOULD BE DOING OUR AD CAMPAINGS EITHER ON A SUNDAY OR THURSDAY)
 
 
