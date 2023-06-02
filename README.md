@@ -60,11 +60,15 @@ LIMIT 5;
 
 -- 5. INVESTORS WANT TO KNOW HOW MANY TIMES DOES THE AVERAGE USER POST?
 
+
 SELECT (SELECT Count(*) 
         FROM   photos) / (SELECT Count(*) 
                           FROM   users) AS avg; 
  
- 
+
+![query5](https://github.com/moholomokhobo/mysql/assets/113181986/bf300e24-c1da-480d-967f-f0a83819d2a4)
+
+
 -- 6. WHAT ARE THE TOP 5 MOST COMMONLY USED HASTAGS?                          
  
 SELECT tags.tag_name, 
