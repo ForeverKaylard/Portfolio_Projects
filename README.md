@@ -30,12 +30,17 @@ ORDER BY no_registrations DESC;
 -- 3. 	WE WANT TO TARGET OUR INACTIVE USERS WITH AN EMAIL CAMPAIGN, FIND 
 -- 		USERS WHO HAVE NEVER POSTED A PHOTO!
 
+
 SELECT *
 FROM users
 LEFT JOIN photos
 	ON users.id = photos.user_id
 WHERE image_url IS NULL;
- 
+
+
+![query3](https://github.com/moholomokhobo/mysql/assets/113181986/86985211-3f70-4c31-87a8-8f23f9ff412c)
+
+
 -- 4. WE ARE RUNNING A CONTEST TO SEE WHO CAN GET YHE MOST LIKES ON A SINGLE PHOTO, WHO WON?
 
 SELECT username, photo_id, COUNT(*) AS total_likes
