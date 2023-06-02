@@ -11,7 +11,7 @@ LIMIT 5;
 ![query1](https://github.com/moholomokhobo/mysql/assets/113181986/25728203-d30c-4d5f-9657-89e4f41bc2f1)
 
 
--- 2. 	WE ARE TRYING TO SCHEDULE AN AD CAMPAIGN, WE NEED TO FIGURE OUT WHAT DAY OF THE WEEK DO MOST USERS REGISTER?
+2. We are trying to schedule an ad campaign, we need to figure out what day of the week do most users register?
 
 
 SELECT 
@@ -29,33 +29,49 @@ ORDER BY no_registrations DESC;
 ![query2](https://github.com/moholomokhobo/mysql/assets/113181986/f18a2b61-43f7-47f0-8d29-2b21fbe2bbe5)
 
 
--- (WE SHOULD BE DOING OUR AD CAMPAINGS EITHER ON A SUNDAY OR THURSDAY)
 
-
--- 3. 	WE WANT TO TARGET OUR INACTIVE USERS WITH AN EMAIL CAMPAIGN, FIND USERS WHO HAVE NEVER POSTED A PHOTO!
+3. We want to target our inactive users with an email campaign, find users who have never posted a photo!
 
 
 SELECT *
+
 FROM users
+
 LEFT JOIN photos
-	ON users.id = photos.user_id
+
+ON users.id = photos.user_id
+
 WHERE image_url IS NULL;
 
 
 ![query3](https://github.com/moholomokhobo/mysql/assets/113181986/86985211-3f70-4c31-87a8-8f23f9ff412c)
 
 
--- 4. WE ARE RUNNING A CONTEST TO SEE WHO CAN GET YHE MOST LIKES ON A SINGLE PHOTO, WHO WON?
+4. We are running a contest to see who can get yhe most likes on a single photo, who won?
 
 
-SELECT username, photo_id, COUNT(*) AS total_likes
+SELECT 
+
+username, 
+
+photo_id, 
+
+COUNT(*) AS total_likes
+
 FROM photos
-	JOIN likes
-	ON photos.id = likes.photo_id
-    JOIN users
-    ON photos.user_id = users.id
+
+JOIN likes
+
+ON photos.id = likes.photo_id
+
+JOIN users
+
+ON photos.user_id = users.id
+
 GROUP BY photos.id
+
 ORDER BY total_likes DESC
+
 LIMIT 5;
 
 
