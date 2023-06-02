@@ -78,44 +78,61 @@ LIMIT 5;
 ![query4](https://github.com/moholomokhobo/mysql/assets/113181986/cb3e6d7d-13a0-4492-9687-7a28d5d381a9)
 
 
--- 5. INVESTORS WANT TO KNOW HOW MANY TIMES DOES THE AVERAGE USER POST?
+5. investors want to know how many times does the average user post?
 
 
-SELECT (SELECT Count(*) 
-        FROM   photos) / (SELECT Count(*) 
-                          FROM   users) AS avg; 
+SELECT 
+
+
+(SELECT Count(*)  FROM   photos) / (SELECT Count(*) FROM   users)  AS avg; 
  
 
 ![query5](https://github.com/moholomokhobo/mysql/assets/113181986/bf300e24-c1da-480d-967f-f0a83819d2a4)
 
 
--- 6. WHAT ARE THE TOP 5 MOST COMMONLY USED HASTAGS?                          
+6. what are the top 5 most commonly used hastags?                         
  
  
-SELECT tags.tag_name, 
-       Count(*) AS total 
-FROM   photo_tags 
-       JOIN tags 
-         ON photo_tags.tag_id = tags.id 
+SELECT 
+
+tags.tag_name, 
+       
+Count(*) AS total 
+
+FROM  photo_tags 
+      
+JOIN tags 
+
+ON photo_tags.tag_id = tags.id 
+
 GROUP  BY tags.id 
+
 ORDER  BY total DESC 
+
 LIMIT  5;                          
 
 
 ![query6](https://github.com/moholomokhobo/mysql/assets/113181986/ecbf5033-521d-4b19-9c66-3a90099e25f7)
 
 
--- 7. 	WE HAVE A PROBLEM WITH BOTS ON OUR SITE! FIND USERS WHO HAVE LIKED EVERY SINGLE PHOTO ON THE SITE
+7. We have a problem with bots on our site! find users who have liked every single photo on the site
 	
     
-SELECT username, 
-       Count(*) AS num_likes 
+SELECT 
+
+username, 
+
+Count(*) AS num_likes 
+
 FROM   users 
-       INNER JOIN likes 
-               ON users.id = likes.user_id 
+       
+JOIN likes 
+
+ON users.id = likes.user_id 
+
 GROUP  BY likes.user_id 
-HAVING num_likes = (SELECT Count(*) 
-                    FROM   photos); 
+
+HAVING num_likes = (SELECT Count(*) FROM  photos); 
                     
                     
 ![query7](https://github.com/moholomokhobo/mysql/assets/113181986/39019ad3-1b56-4226-9214-4ad4d5490c92)
