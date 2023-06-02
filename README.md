@@ -1,9 +1,13 @@
 -- 1. 	WE ARE TASKED WITH FINDING 5 THE OLDERS USERS TO 
 -- 	GIFT THEM A REWARD FOR THE LONGEST USERS SUBSCRIBED TO US?
-    
+
+
 SELECT * FROM users 
 ORDER BY created_at 
 LIMIT 5;
+
+
+![query1](https://github.com/moholomokhobo/mysql/assets/113181986/25728203-d30c-4d5f-9657-89e4f41bc2f1)
 
 
 -- 2. 	WE ARE TRYING TO SCHEDULE AN AD CAMPAIGN, 
