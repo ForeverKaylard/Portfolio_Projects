@@ -71,6 +71,7 @@ SELECT (SELECT Count(*)
 
 -- 6. WHAT ARE THE TOP 5 MOST COMMONLY USED HASTAGS?                          
  
+ 
 SELECT tags.tag_name, 
        Count(*) AS total 
 FROM   photo_tags 
@@ -79,6 +80,9 @@ FROM   photo_tags
 GROUP  BY tags.id 
 ORDER  BY total DESC 
 LIMIT  5;                          
+
+
+![query6](https://github.com/moholomokhobo/mysql/assets/113181986/ecbf5033-521d-4b19-9c66-3a90099e25f7)
 
 
 -- 7. 	WE HAVE A PROBLEM WITH BOTS ON OUR SITE! FIND USERS 
