@@ -43,6 +43,7 @@ WHERE image_url IS NULL;
 
 -- 4. WE ARE RUNNING A CONTEST TO SEE WHO CAN GET YHE MOST LIKES ON A SINGLE PHOTO, WHO WON?
 
+
 SELECT username, photo_id, COUNT(*) AS total_likes
 FROM photos
 	JOIN likes
@@ -52,6 +53,10 @@ FROM photos
 GROUP BY photos.id
 ORDER BY total_likes DESC
 LIMIT 5;
+
+
+![query4](https://github.com/moholomokhobo/mysql/assets/113181986/cb3e6d7d-13a0-4492-9687-7a28d5d381a9)
+
 
 -- 5. INVESTORS WANT TO KNOW HOW MANY TIMES DOES THE AVERAGE USER POST?
 
