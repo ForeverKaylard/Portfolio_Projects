@@ -1,4 +1,4 @@
-1. We are tasked with finding 5 the olders users to gift them a reward for the longest users subscribed to us?
+1. We are tasked with finding 5 of the olders users to gift them a reward for the longest users subscribed to us?
 
 
 SELECT * FROM users
